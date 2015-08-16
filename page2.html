@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+	<title>page2</title>
+</head>
+<body>
+<h1> page 2</h1>
+<div>
+
+	<p id = "result">
+	</p>
+
+	<script>
+	var storedNames = JSON.parse(sessionStorage["values"]);
+
+	for (i=0; i<storedNames.length; i++)
+	{
+		document.getElementById("result").innerHTML += "you have chosen " + storedNames[i] + "<br><br>";
+	}
+	</script>
+
+</div>
+<button>submit</button>
+
+</body>
+</html>

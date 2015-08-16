@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+	<title>page1</title>
+</head>
+<body>
+<h1> page 1</h1>
+
+<form name ="frm" method="post" action="page1.html">
+<div>
+  <label for="option1">Option 1</label>
+  <input type="checkbox" name="chb[]" value ="option 1">
+</div>
+<div>
+  <label for="option2">Option 2</label>
+  <input type="checkbox" name="chb[]" value ="option 2">
+</div>
+<div>
+  <label for="option3">Option 3</label>
+  <input type="checkbox" name="chb[]" value ="option 3">
+</div>
+<div>
+  <label for="option3">Option 4</label>
+  <input type="checkbox" name="chb[]" value ="option 4">
+</div>
+<input type="button" value="Click" id="submit" onclick="getSelected(frm)"/>
+</form>
+
+<script>
+function getSelected(frm) 
+{
+  var chkSelect = [];        
+
+  var inputField = frm.getElementsByTagName('input');
+  var inputFieldnr = inputField.length;
+
+  for(i=0; i<inputFieldnr; i++) 
+  {
+    if(inputField[i].type == 'checkbox' && inputField[i].checked == true) 
+    chkSelect.push(inputField[i].value);
+  }
+  sessionStorage['values'] = JSON.stringify(chkSelect);
+  window.location.href = "page2.html";
+}
+</script>
+
+</body>
+</html>
